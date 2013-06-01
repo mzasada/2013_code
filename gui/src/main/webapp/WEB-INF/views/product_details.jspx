@@ -1,0 +1,14 @@
+<jsp:root version="2.0"
+          xmlns="http://www.w3.org/1999/html"
+          xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <jsp:directive.page contentType="text/html"/>
+
+<h1>Product Details</h1>
+    <br />id: ${product.id}
+    <br />name: <span id="product_name">${product.name}</span>
+    <br />price: ${product.price}
+    <br />
+    <a href="/products">list of products</a>
+    </jsp:root>
+
