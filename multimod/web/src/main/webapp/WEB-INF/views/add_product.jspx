@@ -1,0 +1,11 @@
+<jsp:root version="2.0"
+          xmlns="http://www.w3.org/1999/html"
+          xmlns:jsp="http://java.sun.com/JSP/Page">
+    <jsp:directive.page contentType="text/html"/>
+
+<h1>Add Product</h1>
+    <form action='addProduct' method="post">
+        <input type="text" name="name" />
+        <input type="submit" value="Save"/>
+    </form>
+</jsp:root>
