@@ -3,36 +3,40 @@ package pl.kaczanowscy.tomek.param;
 import org.testng.annotations.Test;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import static org.testng.Assert.assertEquals;
 
 @Test
 public class DateUtilsTest {
 
-	public void secondJuneWasSunday() {
-		Calendar cal = Calendar.getInstance();
-		cal.set(2013, 5, 2);
+    public void secondJuneWasSunday() {
+        Date date = createDate(2013, 5, 2);
 
-		Day day = DateUtils.getDayOfWeek(cal.getTime());
+        Day day = DateUtils.getDayOfWeek(date);
 
-		assertEquals(day, Day.Sunday);
-	}
+        assertEquals(day, Day.Sunday);
+    }
 
-	public void thirdMayWasFriday() {
-		Calendar cal = Calendar.getInstance();
-		cal.set(2013, 4, 3);
+    public void thirdMayWasFriday() {
+        Date date = createDate(2013, 4, 3);
 
-		Day day = DateUtils.getDayOfWeek(cal.getTime());
+        Day day = DateUtils.getDayOfWeek(date);
 
-		assertEquals(day, Day.Friday);
-	}
+        assertEquals(day, Day.Friday);
+    }
 
-	public void tenthAprilWasWednesday() {
-		Calendar cal = Calendar.getInstance();
-		cal.set(2013, 3, 10);
+    public void tenthAprilWasWednesday() {
+        Date date = createDate(2013, 3, 10);
 
-		Day day = DateUtils.getDayOfWeek(cal.getTime());
+        Day day = DateUtils.getDayOfWeek(date);
 
-		assertEquals(day, Day.Wednesday);
-	}
+        assertEquals(day, Day.Wednesday);
+    }
+
+    private static Date createDate(int year, int month, int day) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, day);
+        return cal.getTime();
+    }
 }
