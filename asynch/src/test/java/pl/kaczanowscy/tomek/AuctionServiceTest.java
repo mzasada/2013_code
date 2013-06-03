@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 public class AuctionServiceTest {
 
 	@Test
-	public void thisWontWork() throws InterruptedException {
+	public void shouldSendNotifications() throws InterruptedException {
 		Notifier notifier = mock(Notifier.class);
 		AuctionProcessor auctionProcessor = mock(AuctionProcessor.class);
 		ExecutorService executorService = new ThreadPoolExecutor(2, 10, 300L,
