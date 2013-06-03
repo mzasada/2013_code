@@ -21,12 +21,11 @@ public class AuctionServiceTest {
 		Item item = mock(Item.class);
 		AuctionState state = mock(AuctionState.class);
 		AuctionService service = new AuctionService(notifier, auctionProcessor, executorService);
-
 		given(auctionProcessor.process(item, 10)).willReturn(state);
+
 		service.bid(item, 10);
 
 		Thread.sleep(500);
-
 		verify(notifier).sendNotifications(state);
 	}
 }
