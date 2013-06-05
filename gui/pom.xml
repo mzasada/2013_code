@@ -10,6 +10,7 @@
         <spring.version>3.2.2.RELEASE</spring.version>
         <slf4j.version>1.7.5</slf4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--<application.port>9999</application.port>-->
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -403,6 +404,7 @@
                     <configuration>
                         <properties>
                             <cargo.servlet.uriencoding>UTF-8</cargo.servlet.uriencoding>
+                            <!--<cargo.servlet.port>${application.port}</cargo.servlet.port>-->
                         </properties>
                         <home>${project.build.directory}/tomcat7x/container</home>
                     </configuration>
@@ -451,6 +453,9 @@
                                 <suiteXmlFile>src/test/resources/${gui.tests}</suiteXmlFile>
                             </suiteXmlFiles>
                             -->
+                            <!--<systemPropertyVariables>-->
+                                <!--<appPort>${application.port}</appPort>-->
+                            <!--</systemPropertyVariables>-->
                         </configuration>
                     </execution>
                 </executions>
