@@ -63,10 +63,10 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jdbc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>commons-dbutils</groupId>
-            <artifactId>commons-dbutils</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>commons-dbutils</groupId>-->
+            <!--<artifactId>commons-dbutils</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
