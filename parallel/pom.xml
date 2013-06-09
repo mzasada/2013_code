@@ -8,8 +8,8 @@
   <packaging>pom</packaging>
   <description>Main POM. Gathers modules and common configurations (of dependencies and plugins).</description>
   <modules>
-    <module>main</module>
-    <module>testutils</module>
+    <module>parallel-main</module>
+    <module>parallel-testutils</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

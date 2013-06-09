@@ -5,23 +5,22 @@
 
     <parent>
         <groupId>pl.kaczanowscy.tomek</groupId>
-        <artifactId>main</artifactId>
+        <artifactId>parallel-main</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.kaczanowscy.tomek</groupId>
-    <artifactId>web</artifactId>
-    <name>Web</name>
-    <description>web project</description>
+    <artifactId>parallel-utils</artifactId>
+    <name>Parallel Utils</name>
+    <description>Various utilities</description>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>pl.kaczanowscy.tomek</groupId>
-            <artifactId>test-utils</artifactId>
+            <artifactId>parallel-testutils</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-
 </project>
