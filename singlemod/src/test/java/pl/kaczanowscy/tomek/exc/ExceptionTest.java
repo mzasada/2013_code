@@ -1,22 +1,31 @@
 package pl.kaczanowscy.tomek.exc;
 
-import org.testng.annotations.Test;
 import static org.fest.assertions.Assertions.assertThat;
+
+import org.testng.annotations.Test;
+
+import com.googlecode.catchexception.CatchException;
 
 @Test
 public class ExceptionTest {
 
-	@Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = ".*error.*")
-	public void expectingException() {
-		MyExceptionInvoker exc = new MyExceptionInvoker();
+  @Test
+  public void expectingException() {
+    // given:
+    MyExceptionInvoker exc = new MyExceptionInvoker();
 
-		exc.pretendToDoSth();
-	}
+    // when:
+    CatchException.catchException(exc).pretendToDoSth();
 
-	private class MyExceptionInvoker {
+    // then:
+    assertThat(CatchException.caughtException() instanceof IllegalArgumentException);
+    assertThat(CatchException.caughtException().getMessage()).matches(".*error.*");
+  }
 
-		public void pretendToDoSth() {
-			throw new IllegalArgumentException("ah error occurred!");
-		}
-	}
+  private class MyExceptionInvoker {
+
+    public void pretendToDoSth() {
+      throw new IllegalArgumentException("ah error occurred!");
+    }
+  }
 }
