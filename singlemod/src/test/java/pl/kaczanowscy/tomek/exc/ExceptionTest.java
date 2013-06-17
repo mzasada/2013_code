@@ -18,7 +18,7 @@ public class ExceptionTest {
     CatchException.catchException(exc).pretendToDoSth();
 
     // then:
-    assertThat(CatchException.caughtException() instanceof IllegalArgumentException);
+    assertThat(CatchException.caughtException()).isInstanceOf(IllegalArgumentException.class);
     assertThat(CatchException.caughtException().getMessage()).matches(".*error.*");
   }
 
