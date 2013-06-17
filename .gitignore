@@ -17,4 +17,4 @@ stylesheets/bundles
 */test-output
 
 # Maven 
-*/target
+target/

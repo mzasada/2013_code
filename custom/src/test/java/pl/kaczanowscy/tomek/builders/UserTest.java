@@ -8,19 +8,19 @@ import java.util.Date;
 public class UserTest {
 
 	public void shouldDoSomethingWithActiveUser() {
-		User user = new User("john", "doe", "pass", "john.doe@blah.com", "UTC", new Date(), UserState.ACTIVE, null);
+		User user = new UserBuilder().setFirstName("john").setLastName("doe").setPassword("pass").setEmail("john.doe@blah.com").setTimezone("UTC").setRegistered(new Date()).setState(UserState.ACTIVE).setAddress(null).createUser();
 
 		// a lot of stuff here
 	}
 
 	public void shouldDoSomethingWithNotRegisteredUser() {
-		User user = new User("john", "doe", "pass", "john.doe@blah.com", "UTC", new Date(), UserState.NOT_REGISTERED, null);
+		User user = new UserBuilder().setFirstName("john").setLastName("doe").setPassword("pass").setEmail("john.doe@blah.com").setTimezone("UTC").setRegistered(new Date()).setState(UserState.NOT_REGISTERED).setAddress(null).createUser();
 
 		// a lot of stuff here
 	}
 
 	public void shouldDoSthWithPacificMidwayTimeZone() {
-		User user = new User("john@doe.com", "john", "doe", "Pacific/Midway", "pass");
+		User user = new UserBuilder().setEmail("john@doe.com").setFirstName("john").setLastName("doe").setTimezone("Pacific/Midway").setPassword("pass").createUser();
 
 		// a lot of stuff here
 	}
@@ -45,6 +45,6 @@ public class UserTest {
 	}
 
 	private User validActiveUser(String timezone) {
-		return new User("john", "doe", "pass", "", timezone, new Date(), UserState.ACTIVE, null);
+		return new UserBuilder().setFirstName("john").setLastName("doe").setPassword("pass").setEmail("").setTimezone(timezone).setRegistered(new Date()).setState(UserState.ACTIVE).setAddress(null).createUser();
 	}
 }
